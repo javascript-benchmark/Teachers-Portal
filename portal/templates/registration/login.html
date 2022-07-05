@@ -1,0 +1,45 @@
+{%extends 'registration/base.html'%}
+{%block title%}Log In{%endblock%}
+{%block head%}
+<style type="text/css">
+	.g-recaptcha{
+		margin: 0 auto;
+		width:90%;
+	}
+
+</style>
+{%endblock%}
+{%block content%}
+
+<form class="form" method="POST" action="{%url 'loginF'%}">
+	<div class="header header-info text-center">
+		<h4>Log In!</h4>
+		{% if error_message%}<span style="color:red;"><i class="fa fa-exclamation-circle">&nbsp;&nbsp; </i>{{error_message}}</span>{%endif%}
+	</div>
+	<p class="text-divider"></p>
+	<div class="content">
+		<div class="input-group">
+			<span class="input-group-addon">
+				<i class="material-icons">email</i>
+			</span>
+			<input type="text" class="form-control" name="username" placeholder="Email...">
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon">
+				<i class="material-icons">lock_outline</i>
+			</span>
+			<input type="password" placeholder="Password..." name="password" class="form-control" />
+		</div>
+		<div class="center">
+			<div class="g-recaptcha" data-sitekey="6LdfzzcUAAAAAFbZb4nuuMRtWyfN57FDrcX7aDDX"></div>
+		</div>	
+	</div>
+	<div class="footer text-center">
+		{% csrf_token %}
+
+		<a href="/portal/forgot" class="btn btn-simple btn-info	 btn-lg">Forgot Password?</a>
+		<input type="submit" value="Submit" class="btn btn-simple btn-info	 btn-lg">
+	</div>
+</form>
+{%endblock%}

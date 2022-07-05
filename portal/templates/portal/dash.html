@@ -1,0 +1,84 @@
+{%extends 'portal/base.html'%}
+{%block title%}
+Home | Teacher's Portal
+{%endblock%}
+{%block head%}
+{%endblock%}
+{%block content%}
+<div class="row">
+	
+	<!-- /.col -->
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Courses</span>
+				<span class="info-box-number">{{request.user.profile.courses}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-yellow"><i class="fa fa-google-plus"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Publications</span>
+				<span class="info-box-number">{{request.user.profile.publications}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-blue"><i class="fa fa-book"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Projects</span>
+				<span class="info-box-number">{{request.user.profile.projects}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-blue"><i class="fa fa-book"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Total Students</span>
+				<span class="info-box-number">{{request.user.profile.students}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
+	<!-- /.col -->
+
+	<!-- fix for small devices only -->
+	<div class="clearfix visible-sm-block"></div>
+
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-green"><i class="fa fa-twitter"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Active Courses</span>
+				<span class="info-box-number">{{request.user.profile.active_courses}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
+	<!-- /.col -->
+	
+	<!-- /.col -->
+</div>
+
+
+{%endblock%}
+{%block customsc%}
+{%endblock%}
